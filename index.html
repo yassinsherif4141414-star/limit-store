@@ -1,0 +1,179 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Victory Gifts | Fortnite Store</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #0b0b16;
+            color: white;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 22px 8%;
+            background: #121225;
+            border-bottom: 1px solid #292943;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #8b5cf6;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 22px;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 100px 20px;
+            background: linear-gradient(135deg, #171333, #101b38);
+        }
+
+        .hero h1 {
+            font-size: 46px;
+            margin-bottom: 18px;
+        }
+
+        .hero h1 span {
+            color: #8b5cf6;
+        }
+
+        .hero p {
+            color: #c4c4d6;
+            font-size: 17px;
+            margin-bottom: 28px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #8b5cf6;
+            color: white;
+            padding: 14px 26px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .products {
+            padding: 55px 8%;
+            text-align: center;
+        }
+
+        .products h2 {
+            font-size: 30px;
+            margin-bottom: 30px;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 22px;
+        }
+
+        .card {
+            background: #171729;
+            border: 1px solid #30304a;
+            padding: 28px 20px;
+            border-radius: 14px;
+        }
+
+        .card .emoji {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: #b8b8cc;
+            margin-bottom: 20px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 25px;
+            color: #9999ad;
+            border-top: 1px solid #292943;
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 34px;
+            }
+
+            header {
+                padding: 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">VICTORY GIFTS</div>
+
+        <nav>
+            <a href="#">Home</a>
+            <a href="#shop">Shop</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Your Next <span>Victory</span> Starts Here</h1>
+        <p>Discover your favorite Fortnite skins and cosmetics.</p>
+        <a href="#shop" class="btn">Explore Gifts</a>
+    </section>
+
+    <section class="products" id="shop">
+        <h2>Our Store</h2>
+
+        <div class="cards">
+            <div class="card">
+                <div class="emoji">🎁</div>
+                <h3>Fortnite Skin Gifts</h3>
+                <p>Choose the skin you want.</p>
+                <a href="#" class="btn">Coming Soon</a>
+            </div>
+
+            <div class="card">
+                <div class="emoji">⚡</div>
+                <h3>Fast Service</h3>
+                <p>Simple and easy ordering.</p>
+                <a href="#" class="btn">Learn More</a>
+            </div>
+
+            <div class="card">
+                <div class="emoji">🎮</div>
+                <h3>Gaming Community</h3>
+                <p>A store made for Fortnite fans.</p>
+                <a href="#" class="btn">Join Us</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        © 2026 Victory Gifts. All rights reserved.
+    </footer>
+
+</body>
+</html>
