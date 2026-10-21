@@ -1,179 +1,333 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Victory Gifts | Fortnite Store</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b0714">
+  <title>LIMIT STORE | Fortnite Gifts</title>
+  <style>
+    :root {
+      --bg: #090711;
+      --panel: #171123;
+      --purple: #a855f7;
+      --pink: #ec4899;
+      --text: #fff;
+      --muted: #c1b7d1;
+      --border: #352447;
+    }
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
 
-        body {
-            font-family: Arial, sans-serif;
-            background: #0b0b16;
-            color: white;
-        }
+    body {
+      margin: 0;
+      font-family: Arial, Tahoma, sans-serif;
+      background:
+        radial-gradient(ellipse at 80% 0%, #38145c 0%, transparent 38%),
+        var(--bg);
+      color: var(--text);
+    }
 
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 22px 8%;
-            background: #121225;
-            border-bottom: 1px solid #292943;
-        }
+    a { text-decoration: none; color: inherit; }
+    .container { width: min(1100px, 92%); margin: auto; }
 
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: #8b5cf6;
-        }
+    header {
+      padding: 18px 0;
+      background: #0c0815eF;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      backdrop-filter: blur(12px);
+    }
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin-left: 22px;
-        }
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+    }
 
-        .hero {
-            text-align: center;
-            padding: 100px 20px;
-            background: linear-gradient(135deg, #171333, #101b38);
-        }
+    .logo {
+      font-size: 24px;
+      font-weight: 900;
+      letter-spacing: 1px;
+      direction: ltr;
+    }
 
-        .hero h1 {
-            font-size: 46px;
-            margin-bottom: 18px;
-        }
+    .logo span { color: #c084fc; }
 
-        .hero h1 span {
-            color: #8b5cf6;
-        }
+    .nav-links {
+      display: flex;
+      gap: 20px;
+      color: var(--muted);
+      font-size: 14px;
+    }
 
-        .hero p {
-            color: #c4c4d6;
-            font-size: 17px;
-            margin-bottom: 28px;
-        }
+    .hero {
+      text-align: center;
+      padding: 48px 0 35px;
+    }
 
-        .btn {
-            display: inline-block;
-            background: #8b5cf6;
-            color: white;
-            padding: 14px 26px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: bold;
-        }
+    .tag {
+      display: inline-block;
+      padding: 7px 14px;
+      border: 1px solid var(--border);
+      background: #a855f719;
+      color: #dfc2ff;
+      border-radius: 30px;
+      font-size: 13px;
+    }
 
-        .products {
-            padding: 55px 8%;
-            text-align: center;
-        }
+    h1 {
+      font-size: clamp(36px, 7vw, 62px);
+      margin: 16px 0 10px;
+      line-height: 1.15;
+    }
 
-        .products h2 {
-            font-size: 30px;
-            margin-bottom: 30px;
-        }
+    h1 span {
+      color: #c084fc;
+    }
 
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 22px;
-        }
+    .hero p {
+      color: var(--muted);
+      max-width: 570px;
+      margin: 0 auto 20px;
+      line-height: 1.9;
+    }
 
-        .card {
-            background: #171729;
-            border: 1px solid #30304a;
-            padding: 28px 20px;
-            border-radius: 14px;
-        }
+    .button {
+      display: inline-block;
+      padding: 12px 20px;
+      border: 0;
+      border-radius: 10px;
+      color: white;
+      background: linear-gradient(110deg, var(--purple), var(--pink));
+      font-size: 15px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: transform .2s, filter .2s;
+    }
 
-        .card .emoji {
-            font-size: 45px;
-            margin-bottom: 15px;
-        }
+    .button:hover {
+      transform: translateY(-2px);
+      filter: brightness(1.1);
+    }
 
-        .card h3 {
-            margin-bottom: 10px;
-        }
+    .products { padding: 24px 0 55px; }
 
-        .card p {
-            color: #b8b8cc;
-            margin-bottom: 20px;
-        }
+    .section-title {
+      text-align: center;
+      margin-bottom: 25px;
+    }
 
-        footer {
-            text-align: center;
-            padding: 25px;
-            color: #9999ad;
-            border-top: 1px solid #292943;
-        }
+    .section-title h2 {
+      margin: 0 0 8px;
+      font-size: 30px;
+    }
 
-        @media (max-width: 600px) {
-            .hero h1 {
-                font-size: 34px;
-            }
+    .section-title p {
+      margin: 0;
+      color: var(--muted);
+    }
 
-            header {
-                padding: 18px;
-            }
-        }
-    </style>
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      background: linear-gradient(145deg, #1d1430, #110d1b);
+      border: 1px solid var(--border);
+      border-radius: 17px;
+      padding: 23px;
+      text-align: center;
+      transition: transform .2s, border-color .2s;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      border-color: var(--purple);
+    }
+
+    .vb-icon {
+      width: 57px;
+      height: 57px;
+      display: grid;
+      place-items: center;
+      margin: 0 auto 13px;
+      border-radius: 15px;
+      background: #a855f723;
+      border: 1px solid #a855f74a;
+      color: #e9d5ff;
+      font-size: 20px;
+      font-weight: 900;
+      direction: ltr;
+    }
+
+    .card h3 { margin: 0 0 7px; font-size: 21px; }
+    .card p { color: var(--muted); margin: 0 0 14px; }
+
+    .price {
+      font-size: 27px;
+      font-weight: 900;
+      margin-bottom: 17px;
+    }
+
+    .price small {
+      font-size: 14px;
+      color: var(--muted);
+      font-weight: normal;
+    }
+
+    .order { width: 100%; }
+
+    .community {
+      margin: 0 0 45px;
+      padding: 30px 22px;
+      text-align: center;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      background: linear-gradient(120deg, #241139, #151020);
+    }
+
+    .community h2 { margin: 0 0 9px; }
+    .community p { color: var(--muted); margin: 0 0 18px; }
+
+    footer {
+      text-align: center;
+      border-top: 1px solid var(--border);
+      padding: 24px 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    @media (max-width: 800px) {
+      .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 520px) {
+      .cards { grid-template-columns: 1fr; }
+      .nav-links { gap: 11px; font-size: 12px; }
+      .logo { font-size: 19px; }
+      .hero { padding-top: 36px; }
+      .card { padding: 22px; }
+    }
+  </style>
 </head>
 
 <body>
+  <header>
+    <div class="container nav">
+      <a class="logo" href="#"><span>LIMIT</span> STORE</a>
+      <nav class="nav-links">
+        <a href="#shop">الباقات</a>
+        <a href="#community">Gaming Community</a>
+      </nav>
+    </div>
+  </header>
 
-    <header>
-        <div class="logo">VICTORY GIFTS</div>
-
-        <nav>
-            <a href="#">Home</a>
-            <a href="#shop">Shop</a>
-        </nav>
-    </header>
-
+  <main>
     <section class="hero">
-        <h1>Your Next <span>Victory</span> Starts Here</h1>
-        <p>Discover your favorite Fortnite skins and cosmetics.</p>
-        <a href="#shop" class="btn">Explore Gifts</a>
+      <div class="container">
+        <span class="tag">🎮 FORTNITE GIFTS</span>
+        <h1>LIMIT <span>STORE</span></h1>
+        <p>
+          اختار باقة الـ V-Bucks اللي تناسبك واضغط اطلب الآن.
+          هتفتحلك رسالة واتساب جاهزة بتفاصيل الباقة والسعر.
+        </p>
+        <a href="#shop" class="button">شوف الباقات ↓</a>
+      </div>
     </section>
 
-    <section class="products" id="shop">
-        <h2>Our Store</h2>
-
-        <div class="cards">
-            <div class="card">
-                <div class="emoji">🎁</div>
-                <h3>Fortnite Skin Gifts</h3>
-                <p>Choose the skin you want.</p>
-                <a href="#" class="btn">Coming Soon</a>
-            </div>
-
-            <div class="card">
-                <div class="emoji">⚡</div>
-                <h3>Fast Service</h3>
-                <p>Simple and easy ordering.</p>
-                <a href="#" class="btn">Learn More</a>
-            </div>
-
-            <div class="card">
-                <div class="emoji">🎮</div>
-                <h3>Gaming Community</h3>
-                <p>A store made for Fortnite fans.</p>
-                <a href="#" class="btn">Join Us</a>
-            </div>
-        </div>
+    <section class="products container" id="shop">
+      <div class="section-title">
+        <h2>باقات V-Bucks</h2>
+        <p>اختار الباقة وابدأ طلبك على واتساب</p>
+      </div>
+      <div class="cards" id="product-list"></div>
     </section>
 
-    <footer>
-        © 2026 Victory Gifts. All rights reserved.
-    </footer>
+    <section class="container" id="community">
+      <div class="community">
+        <h2>🎮 Gaming Community</h2>
+        <p>انضم لجروبنا واتابع أخبارنا ومجتمع اللاعبين.</p>
+        <a
+          class="button"
+          href="https://chat.whatsapp.com/IiV72BJzVoV5WqMoh2EWGM?s=cl&amp;p=a&amp;mlu=4&amp;ilr=4"
+          target="_blank"
+          rel="noopener noreferrer"
+        >Join Us ↗</a>
+      </div>
+    </section>
+  </main>
 
+  <footer>
+    <div class="logo"><span>LIMIT</span> STORE</div>
+    <p>متجر مستقل للهدايا الرقمية، غير تابع رسميًا لـ Epic Games أو Fortnite.</p>
+    © 2026 LIMIT STORE
+  </footer>
+
+  <script>
+    const WHATSAPP_NUMBER = "201009535710";
+
+    const packages = [
+      { amount: 500, price: 160 },
+      { amount: 600, price: 170 },
+      { amount: 800, price: 200 },
+      { amount: 1200, price: 306 },
+      { amount: 1500, price: 336 },
+      { amount: 1800, price: 417 },
+      { amount: 2000, price: 477 }
+    ];
+
+    const productList = document.getElementById("product-list");
+
+    packages.forEach((item) => {
+      const card = document.createElement("article");
+      card.className = "card";
+
+      const icon = document.createElement("div");
+      icon.className = "vb-icon";
+      icon.textContent = "VB";
+
+      const title = document.createElement("h3");
+      title.textContent = item.amount.toLocaleString("en-US") + " V-Bucks";
+
+      const description = document.createElement("p");
+      description.textContent = "باقة Fortnite";
+
+      const price = document.createElement("div");
+      price.className = "price";
+      price.append(
+        document.createTextNode(item.price + " "),
+        Object.assign(document.createElement("small"), {
+          textContent: "جنيه"
+        })
+      );
+
+      const button = document.createElement("button");
+      button.className = "button order";
+      button.type = "button";
+      button.textContent = "اطلب الآن ←";
+      button.addEventListener("click", () => orderPackage(item));
+
+      card.append(icon, title, description, price, button);
+      productList.appendChild(card);
+    });
+
+    function orderPackage(item) {
+      const message =
+        `السلام عليكم، عاوز أطلب سكين بـ ${item.amount} V-Bucks من LIMIT STORE بسعر ${item.price} جنيه.`;
+
+      const url =
+        `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+
+      window.open(url, "_blank", "noopener,noreferrer");
+    }
+  </script>
 </body>
 </html>
